@@ -1,16 +1,16 @@
 #!/usr/bin/env python3 
 
+# este programa tiene definidas 2 clases y un main
 
 class ATMMachine(object):
     """
     This class is an ATM simulator
     """
     def __init__(self):
-        self.accounts = []
+        self.accounts = [] #en ppio tengo una lista vacia de cuentas
 
     def make_a_withdraw(self, account_number, amount):
-        """Withdraw (amount) from (account_number)"""
-        pass
+        """Withdraw (amount) from (account_number)"""  
 
     def make_a_deposit(self, account_number, amount):
         """Deposit (amount) into (account_number)"""
@@ -39,19 +39,28 @@ class Account(object):
 
     def withdraw(self, amount):
         """Withdraw some money!"""
-        pass
+        if self.balance < amount:
+          print 'no hay suficiente dinero en la cuenta!'
+        else:
+          self.balance = self.balance-amount
+          print 'puede retirar su dinero'
 
-    def deposit(self, amount):
+    def deposit(self, amount):  
         """Let's receive some money!"""
-        pass
+        self.balance += amount 
     
     def check_balance(self):
         """Let's see how rich we are!"""
+        print 'saldo en la cuenta: '
         return self.balance
 
     def transfer_money(self, amount, another_account):
         """Transfer money from this account to the other one"""
-        pass
+        if self.balance < amount:
+          print 'no hay suficiente dinero en esa cuenta'
+        else:
+          self.balance -= amount
+          self.another_account = amount
 
 
 def main():
