@@ -43,7 +43,7 @@ class Account(object):
           print 'no hay suficiente dinero en la cuenta!'
         else:
           self.balance = self.balance-amount
-          print 'puede retirar su dinero'
+          print "puede retirar su dinero, retira = ",self.balance
 
     def deposit(self, amount):  
         """Let's receive some money!"""
@@ -51,9 +51,9 @@ class Account(object):
     
     def check_balance(self):
         """Let's see how rich we are!"""
-        print 'saldo en la cuenta: '
+        print 'saldo en la cuenta: ',self.balance
         return self.balance
-
+        
     def transfer_money(self, amount, another_account):
         """Transfer money from this account to the other one"""
         if self.balance < amount:
