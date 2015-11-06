@@ -1,0 +1,25 @@
+# en una terminal, abro ipython
+
+Dentro de ipython puedo probar un modulo del script, por ejemplo Account: 
+de esta manera, traigo este modulo solo
+:from atm_machine import Account 
+
+Para preguntar sobre Account
+:Account?  informa sobre las propiedades de ese modulo, parametros, tipo 
+
+Defino 2 cuentas de 2 clientes distintos
+In [12]: cuenta1=Account(123,'cynthia')
+In [17]: cuenta2=Account(555,'pepe',100) #esta cuenta tiene $100 de balance inicial
+
+:cuenta2.balance=100
+
+In [19]: cuenta1.
+cuenta1.account_number  cuenta1.clients_name    cuenta1.withdraw
+cuenta1.balance         cuenta1.deposit         
+cuenta1.check_balance   cuenta1.transfer_money  
+
+
+In [19]: cuenta1.deposit(20)
+In [20]: cuenta1.balance
+Out[20]: 20.0
+
